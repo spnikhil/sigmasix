@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sigma Six</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <div class="crypto-bg"></div>
+    <div class="binary-rain"></div>
+    <div class="circuit-lines"></div>
+    <div class="hologram-grid"></div>
+    
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="cyber-header">
+            <div class="header-left">
+                <div class="logo-container">
+                    <img src="sigma-logo.png" alt="Sigma Six" class="header-logo">
+                    <div class="logo-glow"></div>
+                </div>
+                <div class="title-section">
+                    <h1 class="main-title">SIGMA<span class="title-glitch">SIX</span></h1>
+                    <p class="subtitle">QUANTUM DASHBOARD</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="status-panel">
+                    <div class="status-item">
+                        <span class="status-label">SESSION:</span>
+                        <div id="sessionTimer" class="session-timer">20:00</div>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">ACCESS:</span>
+                        <span class="status-value active">GRANTED</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">USER:</span>
+                        <span class="status-value">ADMIN</span>
+                    </div>
+                </div>
+                <button class="cyber-logout-btn" onclick="logout()">
+                    <span class="btn-text">LOGOUT</span>
+                    <div class="btn-glitch"></div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-panel">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <h2 class="welcome-title">QUANTUM ACCESS <span class="welcome-glitch">ACTIVE</span></h2>
+                    <p class="welcome-message">Welcome back, Operator. All systems are operational.</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">MODULES</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">SECURE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">ACTIVE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-glow"></div>
+        </section>
+
+        <!-- Main Grid -->
+        <main class="dashboard-grid">
+            <!-- Global Business Card -->
+            <a href="global-business/global-business-index.html" class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-badge">ONLINE</div>
+                </div>
+                <h3 class="card-title">GLOBAL BUSINESS</h3>
+                <p class="card-desc">International trade analytics and market data</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-text">Markets</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-text">Monitoring</span>
+                    </div>
+                </div>
+                <div class="card-hover-effect"></div>
+                <div class="card-rainbow-border"></div>
+            </a>
+
+            <!-- Sankalp Shakti Card -->
+            <a href="../sankalp-shakti/sankalp-shakti-index" class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-badge energy">ACTIVE</div>
+                </div>
+                <h3 class="card-title">SANKALP SHAKTI</h3>
+                <p class="card-desc">Energy management and power analytics</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-text">Uptime</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">Real</span>
+                        <span class="stat-text">Time Data</span>
+                    </div>
+                </div>
+                <div class="card-hover-effect"></div>
+                <div class="card-rainbow-border"></div>
+            </a>
+
+            <!-- Sigma Quotes Card -->
+            <a href="sigma-quote.html" class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">💎</div>
+                    <div class="card-badge premium">PREMIUM</div>
+                </div>
+                <h3 class="card-title">SIGMA QUOTES</h3>
+                <p class="card-desc">Premium quotation and pricing engine</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">AI</span>
+                        <span class="stat-text">Powered</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">Instant</span>
+                        <span class="stat-text">Quotes</span>
+                    </div>
+                </div>
+                <div class="card-hover-effect"></div>
+                <div class="card-rainbow-border"></div>
+            </a>
+
+            <!-- Sigma Rate Card -->
+            <a href="sigma-rate/sigma-rate-index.html" class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <div class="card-badge analytics">ANALYTICS</div>
+                </div>
+                <h3 class="card-title">SIGMA RATE</h3>
+                <p class="card-desc">Advanced rating and scoring system</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">ML</span>
+                        <span class="stat-text">Algorithms</span>
+                    </div>
+                    <div class="card-stat">
+                        <span class="stat-number">Smart</span>
+                        <span class="stat-text">Scoring</span>
+                    </div>
+                </div>
+                <div class="card-hover-effect"></div>
+                <div class="card-rainbow-border"></div>
+            </a>
+
+            <!-- Additional Cards for Future Use -->
+            <div class="cyber-card coming-soon">
+                <div class="card-header">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-badge soon">SOON</div>
+                </div>
+                <h3 class="card-title">QUANTUM AI</h3>
+                <p class="card-desc">Advanced artificial intelligence module</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">COMING</span>
+                        <span class="stat-text">Soon</span>
+                    </div>
+                </div>
+                <div class="card-rainbow-border"></div>
+            </div>
+
+            <div class="cyber-card coming-soon">
+                <div class="card-header">
+                    <div class="card-icon">🔒</div>
+                    <div class="card-badge soon">SOON</div>
+                </div>
+                <h3 class="card-title">SECURE VAULT</h3>
+                <p class="card-desc">Encrypted data storage and management</p>
+                <div class="card-stats">
+                    <div class="card-stat">
+                        <span class="stat-number">256-bit</span>
+                        <span class="stat-text">Encryption</span>
+                    </div>
+                </div>
+                <div class="card-rainbow-border"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cyber-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-title"> ALL SYSTEMS OPERATIONAL</div>
+                    <div class="footer-status">
+                        <span class="status-dot online"></span>
+                       Pillai Mishra Association
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-links">
+                        <span class="footer-version">v2.4.1</span>
+                        <span class="footer-build">BUILD 4821</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

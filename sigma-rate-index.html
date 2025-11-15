@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Rate - Sigma Six</title>
+    <link rel="stylesheet" href="sigma-rate-style.css">
+    <script src="../auth.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="rainbow-text">Sigma Six</span>
+            </div>
+            <div class="nav-links">
+                <a href="../sigma-quote.html" class="nav-link">Financial Quotes</a>
+                <a href="../sankalp-shakti/sankalp-shakti-index.html" class="nav-link">Sankalp Shakti</a>
+                <a href="../global-business/global-business-index.html" class="nav-link">Global Business</a>
+                <a href="../sigma-rate/sigma-rate-index.html" class="nav-link active">Sigma Rate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Crazy Crypto Ticker -->
+    <div class="crypto-ticker">
+        <div class="ticker-container">
+            <div class="rainbow-border-ticker">
+                <div class="ticker-track">
+                    <!-- Ticker items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        <div class="ticker-glow"></div>
+    </div>
+
+    <div class="background-pattern"></div>
+    <div class="light-effect"></div>
+    
+    <!-- Floating Crypto Symbols -->
+    <div class="crypto-symbols">
+        <div class="symbol">₿</div>
+        <div class="symbol">Ξ</div>
+        <div class="symbol">●</div>
+        <div class="symbol">⟠</div>
+        <div class="symbol">$</div>
+        <div class="symbol">€</div>
+        <div class="symbol">£</div>
+        <div class="symbol">¥</div>
+    </div>
+    
+    <div class="container">
+        <div class="dashboard">
+            <div class="glow-effect-1"></div>
+            <div class="glow-effect-2"></div>
+            
+            <div class="header">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="../sigma-logo.png" alt="Sigma Six Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <span style="display:none">Σ6</span>
+                    </div>
+                </div>
+                <h1 class="company-name">Sigma Rate</h1>
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Fetching live data from Polygon Network...</p>
+            </div>
+            
+            <!-- Rate Display Section -->
+            <div class="rate-container" id="rateContainer" style="display: none;">
+                <div class="rate-card">
+                    <h3 class="rate-title">Current Sigma Rate</h3>
+                    <div class="rate-value" id="sigmaRate">
+                        <span class="loading-text">Loading...</span>
+                    </div>
+                    <div class="rate-change" id="rateChange">
+                        <span class="loading-text">Calculating...</span>
+                    </div>
+                    <div class="rate-time" id="rateTime">
+                        <span class="auto-refresh">🔄 Auto-updating</span>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Launch Price</h4>
+                        <div class="stat-value" id="launchPrice">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>All Time High</h4>
+                        <div class="stat-value" id="highPrice">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Current Price</h4>
+                        <div class="stat-value" id="currentPrice">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="additional-stats">
+                    <div class="stat-card">
+                        <h4>24h Volume</h4>
+                        <div class="stat-value" id="volume24h">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Market Cap</h4>
+                        <div class="stat-value" id="marketCap">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>24h Change</h4>
+                        <div class="stat-value" id="change24h">
+                            <span class="loading-text">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container" id="chartContainer" style="display: none;">
+                <h3>Price Performance</h3>
+                <div class="chart-placeholder" id="priceChart">
+                    <div class="chart-bars">
+                        <div class="bar launch-bar" data-label="Launch\nPrice"></div>
+                        <div class="bar high-bar" data-label="All Time\nHigh"></div>
+                        <div class="bar current-bar" data-label="Current\nPrice"></div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-color launch-color"></span>
+                        <span>Launch Price</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color high-color"></span>
+                        <span>All Time High</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color current-color"></span>
+                        <span>Current Price</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="token-info">
+                <h3>Token Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Contract Address:</span>
+                        <span class="info-value" id="contractAddress">0xF3e9c6111c79CF857e6BB89988abDF1680aA8c79</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Network:</span>
+                        <span class="info-value">Polygon (MATIC)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Last Updated:</span>
+                        <span class="info-value" id="lastUpdated">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Website</span>
+                    <span class="contact-value">www.sigmasix.app</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">sigmasix951@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">+91-951-951-8589</span>
+                </div>
+            </div>
+
+            <!-- WhatsApp Share & Download Buttons -->
+            <div class="share-section">
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">
+                        <span class="btn-icon">📱</span>
+                        Smart WhatsApp Share
+                    </button>
+                    <button class="share-btn download-btn" onclick="downloadAsImage()">
+                        <span class="btn-icon">📥</span>
+                        Download Image Only
+                    </button>
+                </div>
+                
+                <div class="share-info">
+                    <p style="color: #94a3b8; font-size: 0.8rem; margin-top: 0.5rem;">
+                        <strong>Smart Share:</strong> Downloads image + Opens WhatsApp with perfect message
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="sigma-rate-script.js"></script>
+</body>
+</html>

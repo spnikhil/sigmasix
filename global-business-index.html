@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Business - Greeting Card</title>
+    <link rel="stylesheet" href="global-business-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="global-business.png" alt="Global Business Logo">
+                <span>Global Business</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../sigma-quote.html" class="nav-link">Financial Quotes</a>
+                <a href="../sankalp-shakti/sankalp-shakti-index.html" class="nav-link">Sankalp Shakti</a>
+                <a href="global-business-index.html" class="nav-link active">Global Business</a>
+                <a href="../sigma-rate/sigma-rate-index.html" class="nav-link">Sigma Rate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Greeting Card -->
+        <div class="card" id="greetingCard">
+            <div class="card-header">
+                <h1 id="greeting">Good Morning</h1>
+                <p id="currentDate">November 15, 2025</p>
+            </div>
+            
+            <div class="card-body">
+                <div class="quote-section">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p id="quoteText">The stock market is filled with individuals who know the price of everything, but the value of nothing.</p>
+                    <div class="quote-icon right">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <div class="profile-blue-wrapper">
+                        <div class="profile-image">
+                            <img src="raj.png" alt="Rajesh Mishra">
+                        </div>
+                        <div class="profile-info-wrapper">
+                            <div class="profile-info">
+                                <h3>Rajesh Mishra</h3>
+                                <p>Founder & CEO | Global Business</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons - Image ke niche -->
+                <div class="card-footer">
+                    <button id="refreshQuote" class="btn">
+                        <i class="fas fa-sync-alt"></i> New Quote
+                    </button>
+                    <button id="downloadCard" class="btn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button id="shareWhatsApp" class="btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Share Image
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="global-business-script.js"></script>
+</body>
+</html>

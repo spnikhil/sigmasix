@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sigma Six</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="crypto-bg"></div>
+    <div class="binary-rain"></div>
+    <div class="circuit-lines"></div>
+    
+    <div class="login-container">
+        <div class="main-box-rainbow"></div>
+        
+        <div class="cyber-header">
+            <div class="hologram-logo">
+                <img src="sigma-logo.png" alt="Sigma Six Logo" class="sigma-logo">
+                <div class="pulse-ring"></div>
+            </div>
+            <h1 class="cyber-title">SIGMA<span class="six-glitch">SIX</span></h1>
+            <p class="cyber-subtitle">QUANTUM ACCESS PORTAL</p>
+        </div>
+        
+        <form id="loginForm" class="cyber-form">
+            <div class="input-group">
+                <div class="input-container">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username" class="input-label">USER IDENTIFICATION</label>
+                    <div class="rainbow-border"></div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <div class="input-container">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password" class="input-label">SECURITY CLEARANCE</label>
+                    <div class="rainbow-border"></div>
+                </div>
+            </div>
+            
+            <button type="submit" class="cyber-btn">
+                <span class="btn-text">INITIATE ACCESS</span>
+                <div class="btn-glitch"></div>
+            </button>
+        </form>
+        
+        <div id="errorMessage" class="cyber-error">
+            <span class="error-icon">⚠</span>
+            <span class="error-text">ACCESS DENIED - INVALID CREDENTIALS</span>
+        </div>
+        
+        <div class="cyber-footer">
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">SYSTEM:</span>
+                    <span class="status-value online">ONLINE</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">SECURITY:</span>
+                    <span class="status-value active">ACTIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

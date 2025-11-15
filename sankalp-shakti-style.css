@@ -1,0 +1,902 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2f3b 0%, #2d4a3b 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: rgba(25, 55, 45, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.humanity-text {
+    background: linear-gradient(
+        90deg,
+        #4CAF50,
+        #8BC34A,
+        #CDDC39,
+        #FFEB3B,
+        #FFC107,
+        #FF9800,
+        #FF5722
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: humanityRainbow 4s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes humanityRainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #c8e6c9;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+/* Navigation hover effects remove */
+/*
+.nav-link:hover {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+*/
+
+/* Background Nature Pattern */
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, rgba(76, 175, 80, 0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(139, 195, 74, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(205, 220, 57, 0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 235, 59, 0.1) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    animation: moveBackground 30s linear infinite;
+    z-index: -3;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0, 0 20px, 20px -20px, -20px 0px; }
+    100% { background-position: 80px 0, 80px 20px, 100px -20px, 60px 0px; }
+}
+
+/* Light Effect */
+.light-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 195, 74, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(205, 220, 57, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(255, 193, 7, 0.08) 0%, transparent 50%);
+    z-index: -2;
+    animation: pulseLight 8s ease-in-out infinite;
+}
+
+@keyframes pulseLight {
+    0%, 100% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 0.8;
+    }
+}
+
+/* Floating Humanity Symbols */
+.humanity-symbols {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.symbol {
+    position: absolute;
+    font-size: 28px;
+    animation: floatHumanity 20s infinite linear;
+    text-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.symbol:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; animation-duration: 25s; }
+.symbol:nth-child(2) { top: 20%; left: 90%; animation-delay: 2s; animation-duration: 30s; }
+.symbol:nth-child(3) { top: 80%; left: 10%; animation-delay: 4s; animation-duration: 22s; }
+.symbol:nth-child(4) { top: 40%; left: 80%; animation-delay: 6s; animation-duration: 28s; }
+.symbol:nth-child(5) { top: 60%; left: 5%; animation-delay: 8s; animation-duration: 35s; }
+.symbol:nth-child(6) { top: 30%; left: 60%; animation-delay: 10s; animation-duration: 20s; }
+.symbol:nth-child(7) { top: 70%; left: 70%; animation-delay: 12s; animation-duration: 32s; }
+.symbol:nth-child(8) { top: 90%; left: 50%; animation-delay: 14s; animation-duration: 24s; }
+.symbol:nth-child(9) { top: 15%; left: 25%; animation-delay: 1s; animation-duration: 29s; }
+.symbol:nth-child(10) { top: 75%; left: 85%; animation-delay: 3s; animation-duration: 26s; }
+.symbol:nth-child(11) { top: 45%; left: 15%; animation-delay: 5s; animation-duration: 31s; }
+.symbol:nth-child(12) { top: 85%; left: 35%; animation-delay: 7s; animation-duration: 27s; }
+.symbol:nth-child(13) { top: 25%; left: 75%; animation-delay: 9s; animation-duration: 23s; }
+.symbol:nth-child(14) { top: 65%; left: 45%; animation-delay: 11s; animation-duration: 33s; }
+.symbol:nth-child(15) { top: 35%; left: 95%; animation-delay: 13s; animation-duration: 26s; }
+
+@keyframes floatHumanity {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard {
+    background: rgba(25, 45, 35, 0.85);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 850px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(76, 175, 80, 0.15);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    z-index: 1;
+     transition: none !important; /* Sab transitions band karo */
+    /* Hover effect remove */
+}
+
+/* Dashboard hover remove */
+/*
+.dashboard:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(76, 175, 80, 0.2);
+}
+*/
+.dashboard:hover {
+    transform: none !important; /* Hover pe koi movement nahi */
+}
+
+/* Dashboard Glow Effects */
+.glow-effect-1, .glow-effect-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    animation: glowPulseHumanity 6s ease-in-out infinite;
+}
+
+.glow-effect-1 {
+    width: 200px;
+    height: 200px;
+    background: rgba(76, 175, 80, 0.25);
+    top: -50px;
+    right: -50px;
+}
+
+.glow-effect-2 {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 193, 7, 0.2);
+    bottom: -30px;
+    left: -30px;
+    animation-delay: 2s;
+}
+
+@keyframes glowPulseHumanity {
+    0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.5; 
+        transform: scale(1.1);
+    }
+}
+
+/* Dashboard Nature Pattern */
+.dashboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 193, 7, 0.06) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 50%, #CDDC39 100%);
+    padding: 3px;
+    box-shadow: 
+        0 0 25px rgba(76, 175, 80, 0.5),
+        0 0 50px rgba(139, 195, 74, 0.3);
+    animation: logoGlowHumanity 2s ease-in-out infinite alternate;
+    /* Hover effect remove */
+}
+
+/* Logo hover remove */
+/*
+.logo-container:hover {
+    transform: scale(1.03);
+}
+*/
+
+@keyframes logoGlowHumanity {
+    from { 
+        box-shadow: 
+            0 0 25px rgba(76, 175, 80, 0.5),
+            0 0 50px rgba(139, 195, 74, 0.3);
+    }
+    to { 
+        box-shadow: 
+            0 0 30px rgba(76, 175, 80, 0.6),
+            0 0 60px rgba(139, 195, 74, 0.4);
+    }
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a2f3b, #2d4a3b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #4CAF50;
+    overflow: hidden;
+}
+
+.logo-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 50%;
+    /* Hover effect remove */
+}
+
+/* Logo image hover remove */
+/*
+.logo:hover .logo-image {
+    transform: scale(1.05);
+}
+*/
+
+.foundation-name {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A, #CDDC39, #FFEB3B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    letter-spacing: 1px;
+    /* Hover effect remove */
+}
+
+/* Foundation name hover remove */
+/*
+.foundation-name:hover {
+    text-shadow: 
+        0 0 25px rgba(76, 175, 80, 0.4),
+        0 0 50px rgba(139, 195, 74, 0.2);
+}
+*/
+
+.date-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
+    /* Hover effect remove */
+}
+
+/* Date container hover remove */
+/*
+.date-container:hover {
+    transform: translateY(-1px);
+}
+*/
+
+.current-date {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #CDDC39;
+    text-shadow: 0 0 10px rgba(205, 220, 57, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Good Morning Message Styles */
+.greeting-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(135deg, 
+        rgba(255, 193, 7, 0.1), 
+        rgba(255, 152, 0, 0.05));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.15);
+    position: relative;
+    overflow: hidden;
+    animation: greetingSlideIn 1s ease-out;
+    backdrop-filter: blur(10px);
+    /* Hover effect remove */
+}
+
+/* Greeting container hover remove */
+/*
+.greeting-container:hover {
+    transform: translateY(-2px);
+}
+*/
+
+@keyframes greetingSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.greeting-text {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFC107, #FF9800, #FF5722);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        0 0 25px rgba(255, 193, 7, 0.4),
+        0 0 50px rgba(255, 152, 0, 0.2);
+    animation: greetingGlowHumanity 3s ease-in-out infinite alternate;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    /* Hover effect remove */
+}
+
+/* Greeting text hover remove */
+/*
+.greeting-text:hover {
+    text-shadow: 
+        0 0 30px rgba(255, 193, 7, 0.5),
+        0 0 60px rgba(255, 152, 0, 0.3);
+}
+*/
+
+@keyframes greetingGlowHumanity {
+    0% {
+        text-shadow: 
+            0 0 25px rgba(255, 193, 7, 0.4),
+            0 0 50px rgba(255, 152, 0, 0.2);
+    }
+    100% {
+        text-shadow: 
+            0 0 30px rgba(255, 193, 7, 0.5),
+            0 0 60px rgba(255, 152, 0, 0.3);
+    }
+}
+
+.greeting-subtitle {
+    font-size: 1.5rem;
+    color: #FFEB3B;
+    font-weight: 600;
+    animation: subtitleFadeHumanity 4s ease-in-out infinite alternate;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.3);
+}
+
+@keyframes subtitleFadeHumanity {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.greeting-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 235, 59, 0.1), 
+        transparent);
+    animation: greetingShine 6s ease-in-out infinite;
+}
+
+@keyframes greetingShine {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.greeting-container::after {
+    content: '🌻';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 5rem;
+    opacity: 0.2;
+    animation: sunRotateHumanity 20s linear infinite;
+}
+
+@keyframes sunRotateHumanity {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.quote-container {
+    background: rgba(139, 195, 74, 0.1);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    border: 1px solid rgba(139, 195, 74, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(139, 195, 74, 0.15);
+    /* Hover effect remove */
+}
+
+/* Quote container hover remove */
+/*
+.quote-container:hover {
+    transform: translateY(-1px);
+}
+*/
+
+.quote-container::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 6rem;
+    color: rgba(139, 195, 74, 0.15);
+    font-family: Georgia, serif;
+    z-index: 0;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #E8F5E8;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    /* Hover effect remove */
+}
+
+/* Quote text hover remove */
+/*
+.quote-text:hover {
+    color: #FFFFFF;
+}
+*/
+
+.quote-author {
+    font-size: 1.1rem;
+    color: #C8E6C9;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(76, 175, 80, 0.08);
+    border-radius: 15px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.1);
+    /* Hover effect remove */
+}
+
+/* Contact info hover remove */
+/*
+.contact-info:hover {
+    transform: translateY(-1px);
+}
+*/
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    /* Hover effect remove */
+    min-width: 180px;
+}
+
+/* Contact item hover remove */
+/*
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+*/
+
+.contact-label {
+    font-size: 0.95rem;
+    color: #A5D6A7;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-value {
+    font-size: 1.1rem;
+    color: #69F0AE;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(105, 240, 174, 0.2);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Hover effect remove - only buttons pe rakho agar chahiye */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: #1a2f3b;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #5cb860, #9ccc65);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #34b7f1, #128c7e);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #FF9800, #FF5722);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.reset-btn:hover {
+    background: linear-gradient(135deg, #ffa726, #ef6c00);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+/* Add floating particles for greeting */
+.greeting-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #FFC107;
+    border-radius: 50%;
+    animation: particleFloatHumanity 6s ease-in-out infinite;
+}
+
+@keyframes particleFloatHumanity {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-15px) translateX(8px);
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.6;
+    }
+}
+
+/* Custom Notification Styles */
+.custom-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: #1a2f3b;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+    z-index: 10000;
+    font-weight: 700;
+    font-size: 15px;
+    transform: translateX(120%);
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    min-width: 250px;
+}
+
+.custom-notification.show {
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .dashboard {
+        padding: 2rem;
+        border-radius: 15px;
+    }
+    
+    .foundation-name {
+        font-size: 2.2rem;
+    }
+    
+    .greeting-text {
+        font-size: 3rem;
+    }
+    
+    .greeting-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .quote-text {
+        font-size: 1.3rem;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 2rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .foundation-name {
+        font-size: 1.8rem;
+    }
+    
+    .greeting-text {
+        font-size: 2.5rem;
+    }
+    
+    .greeting-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .quote-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .dashboard {
+        padding: 1.5rem;
+    }
+
+    .greeting-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .greeting-container::after {
+        font-size: 3rem;
+        top: -15px;
+        right: -15px;
+    }
+}
