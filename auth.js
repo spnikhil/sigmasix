@@ -35,7 +35,7 @@ function checkAuth() {
 }
 
 function redirectToLogin() {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 function logout() {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop();
     
     // Agar login page pe nahi hai, toh authentication check karo
-    if (currentPage !== 'login.html') {
+    if (currentPage !== 'index.html') {
         if (!checkAuth()) {
             return;
         }
@@ -96,4 +96,5 @@ function startSessionTimer() {
     
     updateTimer();
     setInterval(updateTimer, 1000);
+
 }
